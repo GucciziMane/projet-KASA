@@ -16,3 +16,18 @@
   color: #FFFFFF;
   font-size: 24px;
 }
+
+@media (max-width: 768px) {
+  .footer {
+    padding: 40px 20px 30px;
+  }
+
+  .footer-logo {
+    width: 90px;
+  }
+
+  .footer p {
+    font-size: 14px;
+    text-align: center;
+  }
+}

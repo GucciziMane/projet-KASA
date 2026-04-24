@@ -1,0 +1,20 @@
+.home-gallery {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  background-color: #f6f6f6;
+  border-radius: 25px;
+  padding: 50px;
+  margin: 0 100px 50px;
+}
+
+@media (max-width: 768px) {
+  .home-gallery {
+    grid-template-columns: 1fr;
+    gap: 20px;
+    padding: 20px;
+    margin: 0 20px 40px;
+    border-radius: 10px;
+    background-color: transparent;
+  }
+}
