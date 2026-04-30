@@ -1,15 +1,16 @@
 import Banner from '../components/Banner'
 import Card from '../components/Card'
 import bannerImg from '../assets/banner.png'
+import { getPropertiesUrl } from '../config/api'
 import useFetch from '../hooks/useFetch'
 import './Home.css'
 
 function Home() {
-  const { data: logements, loading, error } = useFetch('http://localhost:8080/api/properties')
+  const { data: logements, loading, error } = useFetch(getPropertiesUrl())
 
   return (
     <main>
-      <Banner image={bannerImg} text="Chez vous, partout et ailleurs" className="banner--shadow" />
+      <Banner image={bannerImg} text={<>Chez vous,<br /> partout et ailleurs</>} className="banner--shadow" />
       <section className="home-gallery">
         {loading && <p>Chargement...</p>}
         {error && <p>Erreur : {error}</p>}

@@ -27,9 +27,16 @@
   color: #fff;
   font-size: 48px;
   font-weight: 700;
+  line-height: 1.2;
   text-align: center;
+  max-width: 100%;
+  padding: 0 24px;
   z-index: 1;
   text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.6);
+}
+
+.banner-text br {
+  display: none;
 }
 
 @media (max-width: 768px) {
@@ -37,13 +44,32 @@
     height: 111px;
     border-radius: 10px;
     margin: 20px 20px;
-    justify-content: center;
-    align-items: center;
     padding: 20px;
+    justify-content: flex-start;
   }
 
   .banner-text {
     font-size: 24px;
-    text-align: center;
+    text-align: left;
+    white-space: normal;
+  }
+
+  .banner-text br {
+    display: block;
+  }
+
+  .banner--shadow {
+    height: 158px;
+    border-radius: 25px;
+    margin: 0 32px 22px;
+    padding: 0 48px;
+    align-items: center;
+    box-shadow: none;
+  }
+
+  .banner--shadow .banner-text {
+    padding: 0;
+    font-size: 32px;
+    line-height: 1.12;
   }
 }

@@ -16,7 +16,7 @@
 
 .header nav a {
   text-decoration: none;
-  color: #000000;
+  color: var(--color-black);
   font-size: 24px;
 }
 
@@ -26,18 +26,19 @@
 
 @media (max-width: 768px) {
   .header {
-    padding: 20px 20px;
+    padding: 28px 20px 30px;
   }
 
   .header-logo {
-    width: 120px;
+    width: 145px;
   }
 
   .header nav {
-    gap: 20px;
+    gap: 26px;
   }
 
   .header nav a {
-    font-size: 14px;
+    font-size: 16px;
+    text-transform: uppercase;
   }
 }

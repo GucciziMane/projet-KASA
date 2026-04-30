@@ -1,11 +1,18 @@
 .card {
   position: relative;
   display: block;
+  aspect-ratio: 1 / 1;
   border-radius: 10px;
   overflow: hidden;
-  background-color: #FF6B5B;
-  height: 340px;
+  background-color: var(--color-card-bg);
   text-decoration: none;
+}
+
+@media (max-width: 768px) {
+  .card {
+    height: auto;
+    aspect-ratio: 16 / 9;
+  }
 }
 
 .card-img {
@@ -26,7 +33,7 @@
   bottom: 20px;
   left: 20px;
   color: #fff;
-  font-size: 18px;
+  font-size: 22px;
   font-weight: 500;
   z-index: 1;
   max-width: 75%;

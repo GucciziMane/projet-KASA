@@ -1,25 +1,65 @@
 import { useState, useEffect } from 'react'
 
 function useFetch(url) {
-  const [data, setData] = useState(null)
-  const [loading, setLoading] = useState(true)
-  const [error, setError] = useState(null)
+  const [state, setState] = useState({
+    url,
+    data: null,
+    loading: true,
+    error: null,
+    status: null,
+  })
 
   useEffect(() => {
-    setLoading(true)
-    setError(null)
+    const controller = new AbortController()
+    let isCurrent = true
 
-    fetch(url)
+    fetch(url, { signal: controller.signal })
       .then((res) => {
-        if (!res.ok) throw new Error(`Erreur ${res.status}`)
+        if (!res.ok) {
+          const error = new Error(`Erreur ${res.status}`)
+          error.status = res.status
+          throw error
+        }
+
         return res.json()
       })
-      .then((json) => setData(json))
-      .catch((err) => setError(err.message))
-      .finally(() => setLoading(false))
+      .then((json) => {
+        if (!isCurrent) return
+
+        setState({
+          url,
+          data: json,
+          loading: false,
+          error: null,
+          status: null,
+        })
+      })
+      .catch((err) => {
+        if (err.name === 'AbortError' || !isCurrent) return
+
+        setState({
+          url,
+          data: null,
+          loading: false,
+          error: err.message,
+          status: err.status ?? null,
+        })
+      })
+
+    return () => {
+      isCurrent = false
+      controller.abort()
+    }
   }, [url])
 
-  return { data, loading, error }
+  const isStale = state.url !== url
+
+  return {
+    data: isStale ? null : state.data,
+    loading: isStale || state.loading,
+    error: isStale ? null : state.error,
+    status: isStale ? null : state.status,
+  }
 }
 
 export default useFetch

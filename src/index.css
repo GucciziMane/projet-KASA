@@ -1,3 +1,12 @@
+:root {
+  --color-primary: #FF6060;
+  --color-card-bg: #FF6B5B;
+  --color-bg-light: #F6F6F6;
+  --color-star-inactive: #E3E3E3;
+  --color-black: #000000;
+  --color-white: #ffffff;
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -6,8 +15,8 @@
 
 body {
   font-family: 'Montserrat', sans-serif;
-  background-color: #ffffff;
-  color: #000000;
+  background-color: var(--color-white);
+  color: var(--color-black);
 }
 
 #root {

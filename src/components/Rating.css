@@ -1,0 +1,24 @@
+.rating {
+  display: flex;
+  gap: 10px;
+}
+
+.rating-star {
+  color: var(--color-star-inactive);
+  font-size: 28px;
+  line-height: 1;
+}
+
+.rating-star--active {
+  color: var(--color-primary);
+}
+
+@media (max-width: 768px) {
+  .rating {
+    gap: 6px;
+  }
+
+  .rating-star {
+    font-size: 20px;
+  }
+}
