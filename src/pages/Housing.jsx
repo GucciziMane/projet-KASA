@@ -1,5 +1,4 @@
-import { useParams, useNavigate } from 'react-router-dom'
-import { useEffect } from 'react'
+import { useParams, Navigate } from 'react-router-dom'
 import Slideshow from '../components/Slideshow'
 import Collapse from '../components/Collapse'
 import Rating from '../components/Rating'
@@ -9,16 +8,10 @@ import './Housing.css'
 
 function Housing() {
   const { id } = useParams()
-  const navigate = useNavigate()
-  const { data: logement, loading, error, status } = useFetch(getPropertyUrl(id))
+  const { data: logement, loading, error } = useFetch(getPropertyUrl(id))
 
-  useEffect(() => {
-    if (status === 404) navigate('/404')
-  }, [status, navigate])
-
-  if (loading) return <p>Chargement...</p>
-  if (error) return <p>Erreur : {error}</p>
-  if (!logement) return null
+  if (loading) return null
+  if (error || !logement) return <Navigate replace to="/404" />
 
   const hostName = logement.host?.name ?? ''
   const [hostFirstName, ...hostLastName] = hostName.split(' ')

@@ -11,14 +11,14 @@
 .not-found-code {
   font-size: 288px;
   font-weight: 700;
-  color: var(--color-black);
+  color: var(--color-primary);
   line-height: 1;
 }
 
 .not-found-text {
   font-size: 36px;
   font-weight: 500;
-  color: var(--color-black);
+  color: var(--color-primary);
   margin-top: 30px;
   max-width: 600px;
 }
@@ -27,6 +27,7 @@
   font-size: 18px;
   color: var(--color-black);
   margin-top: 182px;
+  text-decoration: underline;
   text-underline-offset: 4px;
 }
 
