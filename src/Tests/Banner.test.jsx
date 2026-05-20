@@ -1,5 +1,5 @@
 import { render, screen } from '@testing-library/react'
-import Banner from './Banner'
+import Banner from '../components/Banner'
 
 describe('Banner', () => {
   it('affiche le texte quand la prop text est fournie', () => {

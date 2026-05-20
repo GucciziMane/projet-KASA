@@ -1,6 +1,6 @@
 import { render, screen } from '@testing-library/react'
 import userEvent from '@testing-library/user-event'
-import Slideshow from './Slideshow'
+import Slideshow from '../components/Slideshow'
 
 const pictures = ['img1.jpg', 'img2.jpg', 'img3.jpg']
 
