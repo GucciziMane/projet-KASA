@@ -1,16 +1,41 @@
-# React + Vite
+# Kasa
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Application web de location immobilière entre particuliers, développée en React dans le cadre de la formation OpenClassrooms — parcours Développeur web, testeur de logiciel.
 
-Currently, two official plugins are available:
+Le projet consistait à développer l'ensemble du front-end à partir de maquettes Figma et d'un jeu de données JSON, en remplacement d'une ancienne stack ASP.NET.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## Fonctionnalités
 
-## React Compiler
+- Navigation entre les pages avec React Router (accueil, fiche logement, à propos, erreur 404)
+- Galerie de logements générée dynamiquement depuis les données
+- Carrousel d'images avec navigation cyclique
+- Collapses dépliables pour la description, les équipements et les sections « À propos »
+- Redirection vers la page 404 si l'identifiant du logement n'existe pas
+- Interface responsive, conforme aux maquettes desktop et mobile
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## Stack technique
 
-## Expanding the ESLint configuration
+- React
+- React Router
+- Vite
+- Sass
+- Vitest pour les tests unitaires
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## Tests
+
+Tests unitaires sur les composants Banner et Slideshow, avec une couverture de 100 % sur ces deux composants.
+
+```bash
+npm run test
+```
+
+## Installation
+
+```bash
+git clone https://github.com/GucciziMane/projet-KASA.git
+cd projet-KASA
+npm install
+npm run dev
+```
+
+L'application est disponible sur `http://localhost:5173`.
